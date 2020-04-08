@@ -24,4 +24,5 @@ const pkg = require(pkgPath);
 if (pkg.version !== branchVersion){
   pkg.version = branchVersion;
   fs.writeFileSync(pkgPath, JSON.stringify(pkg, null, 2));
-}
+  shell.exec('git add .');
+};
